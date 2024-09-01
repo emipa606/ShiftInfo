@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <ShI.ModVersion>Installed mod-version: {0}</ShI.ModVersion>
+  <ShI.AlwaysShow>Always show all shift alerts</ShI.AlwaysShow>
+  <ShI.NoPawnsOnShift>No pawns on shift</ShI.NoPawnsOnShift>
+  <ShI.AlwaysShowTT>Will show all shifts even when there are no pawns in them.</ShI.AlwaysShowTT>
+</LanguageData>

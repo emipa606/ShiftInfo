@@ -1,5 +1,8 @@
 # Changelog for ShiftInfo
 
+1.5.1 - Shift alerts should now keep grouped and shown at the lower part of the alert area mostly
+
+
 1.5.0 - First publish
 Used DeepL to update translations for ChineseSimplified, French, German
 

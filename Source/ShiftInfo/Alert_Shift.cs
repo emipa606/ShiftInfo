@@ -32,13 +32,27 @@ public class Alert_Shift : Alert
             }
 
             pawnsOnShift.Clear();
-            Find.CurrentMap.mapPawns.FreeColonists.ForEach(x =>
+
+            Find.CurrentMap.mapPawns.FreeColonistsAndPrisonersSpawned.ForEach(x =>
             {
-                if (x.timetable.CurrentAssignment == currentShift)
+                if (x.timetable.CurrentAssignment != currentShift)
                 {
-                    pawnsOnShift.Add(x);
+                    return;
                 }
+
+                if (x.IsPrisonerOfColony && !ShiftInfoMod.instance.Settings.IncludePrisoners)
+                {
+                    return;
+                }
+
+                if (x.IsSlaveOfColony && !ShiftInfoMod.instance.Settings.IncludeSlaves)
+                {
+                    return;
+                }
+
+                pawnsOnShift.Add(x);
             });
+
             lastUpdatedTick = 0;
             return pawnsOnShift;
         }
@@ -49,12 +63,27 @@ public class Alert_Shift : Alert
     public override TaggedString GetExplanation()
     {
         lastUpdatedTick = 50;
-        if (PawnsOnShift.Any())
+        if (!PawnsOnShift.Any())
         {
-            return string.Join(Environment.NewLine, PawnsOnShift.Select(pawn => pawn.NameFullColored));
+            return "ShI.NoPawnsOnShift".Translate();
         }
 
-        return "ShI.NoPawnsOnShift".Translate();
+        return string.Join(Environment.NewLine, PawnsOnShift.Select(Selector));
+
+        TaggedString Selector(Pawn pawn)
+        {
+            if (pawn.IsSlaveOfColony)
+            {
+                return $"{pawn.NameFullColored} ({"Slave".Translate().ToLower()})";
+            }
+
+            if (pawn.IsPrisonerOfColony)
+            {
+                return $"{pawn.NameFullColored} ({"Prisoner".Translate().ToLower()})";
+            }
+
+            return pawn.NameFullColored;
+        }
     }
 
     public override AlertReport GetReport()

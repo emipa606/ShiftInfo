@@ -5,4 +5,8 @@
   <ShI.AlwaysShow>始终显示所有轮班警报</ShI.AlwaysShow>
   <ShI.NoPawnsOnShift>无卒轮班</ShI.NoPawnsOnShift>
   <ShI.AlwaysShowTT>即使没有棋子，也会显示所有班次。</ShI.AlwaysShowTT>
+  <ShI.IncludePrisoners>同时清点囚犯人数</ShI.IncludePrisoners>
+  <ShI.IncludePrisonersTT>殖民地的囚犯将被纳入轮班信息中</ShI.IncludePrisonersTT>
+  <ShI.IncludeSlaves>也算奴隶</ShI.IncludeSlaves>
+  <ShI.IncludeSlavesTT>殖民地的奴隶将包括在轮班信息中</ShI.IncludeSlavesTT>
 </LanguageData>

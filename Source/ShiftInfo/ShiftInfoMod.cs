@@ -51,6 +51,18 @@ internal class ShiftInfoMod : Mod
         listing_Standard.Gap();
         listing_Standard.CheckboxLabeled("ShI.AlwaysShow".Translate(), ref Settings.AlwaysShow,
             "ShI.AlwaysShowTT".Translate());
+        listing_Standard.CheckboxLabeled("ShI.IncludePrisoners".Translate(), ref Settings.IncludePrisoners,
+            "ShI.IncludePrisonersTT".Translate());
+        if (ModsConfig.RoyaltyActive)
+        {
+            listing_Standard.CheckboxLabeled("ShI.IncludeSlaves".Translate(), ref Settings.IncludeSlaves,
+                "ShI.AIncludeSlavesTT".Translate());
+        }
+        else
+        {
+            Settings.IncludeSlaves = false;
+        }
+
         if (currentVersion != null)
         {
             listing_Standard.Gap();

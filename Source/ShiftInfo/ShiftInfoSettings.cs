@@ -8,6 +8,8 @@ namespace ShiftInfo;
 internal class ShiftInfoSettings : ModSettings
 {
     public bool AlwaysShow;
+    public bool IncludePrisoners;
+    public bool IncludeSlaves;
 
     /// <summary>
     ///     Saving and loading the values
@@ -16,5 +18,7 @@ internal class ShiftInfoSettings : ModSettings
     {
         base.ExposeData();
         Scribe_Values.Look(ref AlwaysShow, "AlwaysShow");
+        Scribe_Values.Look(ref IncludePrisoners, "IncludePrisoners");
+        Scribe_Values.Look(ref IncludeSlaves, "IncludeSlaves");
     }
 }

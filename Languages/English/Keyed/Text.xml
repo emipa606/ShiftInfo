@@ -3,5 +3,9 @@
   <ShI.ModVersion>Installed mod-version: {0}</ShI.ModVersion>
   <ShI.AlwaysShow>Always show all shift alerts</ShI.AlwaysShow>
   <ShI.NoPawnsOnShift>No pawns on shift</ShI.NoPawnsOnShift>
+  <ShI.IncludePrisoners>Also count prisoners</ShI.IncludePrisoners>
+  <ShI.IncludePrisonersTT>Prisoners of the colony will be included in the shift info</ShI.IncludePrisonersTT>
+  <ShI.IncludeSlaves>Also count slaves</ShI.IncludeSlaves>
+  <ShI.IncludeSlavesTT>Slaves of the colony will be included in the shift info</ShI.IncludeSlavesTT>
   <ShI.AlwaysShowTT>Will show all shifts even when there are no pawns in them.</ShI.AlwaysShowTT>
 </LanguageData>

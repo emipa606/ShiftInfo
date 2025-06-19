@@ -40,12 +40,12 @@ public class Alert_Shift : Alert
                     return;
                 }
 
-                if (x.IsPrisonerOfColony && !ShiftInfoMod.instance.Settings.IncludePrisoners)
+                if (x.IsPrisonerOfColony && !ShiftInfoMod.Instance.Settings.IncludePrisoners)
                 {
                     return;
                 }
 
-                if (x.IsSlaveOfColony && !ShiftInfoMod.instance.Settings.IncludeSlaves)
+                if (x.IsSlaveOfColony && !ShiftInfoMod.Instance.Settings.IncludeSlaves)
                 {
                     return;
                 }
@@ -68,9 +68,9 @@ public class Alert_Shift : Alert
             return "ShI.NoPawnsOnShift".Translate();
         }
 
-        return string.Join(Environment.NewLine, PawnsOnShift.Select(Selector));
+        return string.Join(Environment.NewLine, PawnsOnShift.Select(selector));
 
-        TaggedString Selector(Pawn pawn)
+        static TaggedString selector(Pawn pawn)
         {
             if (pawn.IsSlaveOfColony)
             {
@@ -94,6 +94,6 @@ public class Alert_Shift : Alert
             return AlertReport.CulpritsAre(PawnsOnShift);
         }
 
-        return ShiftInfoMod.instance.Settings.AlwaysShow ? AlertReport.Active : AlertReport.Inactive;
+        return ShiftInfoMod.Instance.Settings.AlwaysShow ? AlertReport.Active : AlertReport.Inactive;
     }
 }

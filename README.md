@@ -6,6 +6,7 @@ Keep track of what your pawns are doing
 
 The mod adds a separate low-prio alert for each of the possible time assignment types, even those added by mods.
 By default only those that has a pawn active will be shown, but there is a mod-option to have them always shown.
+There are also options to include prisoners and slaves in the shift info.
 
 I made this mod after years of playing Prison Architect where you have a mini-display of what activity is scheduled at the moment.
 Perhaps it can help to keep track of scheduling-issues when the amount of pawns in your colony grows.
@@ -28,6 +29,6 @@ Since modding is just a hobby for me I expect no donations to keep modding. If y
 -  If you have the solution for a problem, please post it to the GitHub repository.
 -  Use [RimSort](https://github.com/RimSort/RimSort/releases/latest) to sort your mods
 
+ 
 
-
-[![Image](https://img.shields.io/github/v/release/emipa606/ShiftInfo?label=latest%20version&style=plastic&labelColor=0070cd&color=white)](https://steamcommunity.com/sharedfiles/filedetails/changelog/3322754255)
+[![Image](https://img.shields.io/github/v/release/emipa606/ShiftInfo?label=latest%20version&style=plastic&labelColor=0070cd&color=white)](https://steamcommunity.com/sharedfiles/filedetails/changelog/3322754255) | tags:  scheduling

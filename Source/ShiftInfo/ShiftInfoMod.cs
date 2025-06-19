@@ -10,7 +10,7 @@ internal class ShiftInfoMod : Mod
     /// <summary>
     ///     The instance of the settings to be read by the mod
     /// </summary>
-    public static ShiftInfoMod instance;
+    public static ShiftInfoMod Instance;
 
     private static string currentVersion;
 
@@ -20,7 +20,7 @@ internal class ShiftInfoMod : Mod
     /// <param name="content"></param>
     public ShiftInfoMod(ModContentPack content) : base(content)
     {
-        instance = this;
+        Instance = this;
         Settings = GetSettings<ShiftInfoSettings>();
         currentVersion = VersionFromManifest.GetVersionFromModMetaData(content.ModMetaData);
     }

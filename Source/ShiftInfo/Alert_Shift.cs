@@ -33,24 +33,24 @@ public class Alert_Shift : Alert
 
             pawnsOnShift.Clear();
 
-            Find.CurrentMap.mapPawns.FreeColonistsAndPrisonersSpawned.ForEach(x =>
+            Find.CurrentMap.mapPawns.FreeColonistsAndPrisonersSpawned.ForEach(pawn =>
             {
-                if (x.timetable.CurrentAssignment != currentShift)
+                if (pawn.timetable?.CurrentAssignment != currentShift)
                 {
                     return;
                 }
 
-                if (x.IsPrisonerOfColony && !ShiftInfoMod.Instance.Settings.IncludePrisoners)
+                if (pawn.IsPrisonerOfColony && !ShiftInfoMod.Instance.Settings.IncludePrisoners)
                 {
                     return;
                 }
 
-                if (x.IsSlaveOfColony && !ShiftInfoMod.Instance.Settings.IncludeSlaves)
+                if (pawn.IsSlaveOfColony && !ShiftInfoMod.Instance.Settings.IncludeSlaves)
                 {
                     return;
                 }
 
-                pawnsOnShift.Add(x);
+                pawnsOnShift.Add(pawn);
             });
 
             lastUpdatedTick = 0;

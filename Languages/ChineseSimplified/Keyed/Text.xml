@@ -9,4 +9,6 @@
   <ShI.IncludePrisonersTT>殖民地的囚犯将被纳入轮班信息中</ShI.IncludePrisonersTT>
   <ShI.IncludeSlaves>也算奴隶</ShI.IncludeSlaves>
   <ShI.IncludeSlavesTT>殖民地的奴隶将包括在轮班信息中</ShI.IncludeSlavesTT>
+  <ShI.DarkerColors>使用深色</ShI.DarkerColors>
+  <ShI.DarkerColorsTT>为了不分散注意力，这些文字的颜色将变暗，而不是使用原始的活动颜色。</ShI.DarkerColorsTT>
 </LanguageData>

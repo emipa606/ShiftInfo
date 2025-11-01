@@ -9,4 +9,6 @@
   <ShI.IncludePrisonersTT>Les prisonniers de la colonie seront inclus dans l'info quart.</ShI.IncludePrisonersTT>
   <ShI.IncludeSlaves>Compter également les esclaves</ShI.IncludeSlaves>
   <ShI.IncludeSlavesTT>Les esclaves de la colonie seront inclus dans l'info quart.</ShI.IncludeSlavesTT>
+  <ShI.DarkerColors>Utiliser des couleurs plus sombres</ShI.DarkerColors>
+  <ShI.DarkerColorsTT>Au lieu d'utiliser les couleurs brutes de l'activité, elles seront assombries pour ne pas être gênantes.</ShI.DarkerColorsTT>
 </LanguageData>

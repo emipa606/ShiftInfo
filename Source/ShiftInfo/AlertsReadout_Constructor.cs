@@ -17,11 +17,8 @@ public static class AlertsReadout_Constructor
 
     public static void Postfix(List<Alert> ___AllAlerts)
     {
-        foreach (var unused in ShiftInfo.AvailableShifts.Where(def => def != TimeAssignmentDefOf.Anything))
-        {
-            var alert = (Alert)Activator.CreateInstance(typeof(Alert_Shift));
-            ___AllAlerts.Add(alert);
-        }
+        ___AllAlerts.AddRange(ShiftInfo.AvailableShifts.Where(def => def != TimeAssignmentDefOf.Anything)
+            .Select(_ => (Alert)Activator.CreateInstance(typeof(Alert_Shift))));
 
         Log.Message($"[ShiftInfo]: Created shiftalerts for {ShiftInfo.CreatedAlerts} shifts");
     }

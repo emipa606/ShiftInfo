@@ -9,4 +9,6 @@
   <ShI.IncludePrisonersTT>Die Gefangenen der Kolonie werden in die Schichtinformationen aufgenommen.</ShI.IncludePrisonersTT>
   <ShI.IncludeSlaves>Auch Sklaven zählen</ShI.IncludeSlaves>
   <ShI.IncludeSlavesTT>Die Sklaven der Kolonie werden in die Schichtinformationen einbezogen.</ShI.IncludeSlavesTT>
+  <ShI.DarkerColors>Verwenden Sie dunklere Farben</ShI.DarkerColors>
+  <ShI.DarkerColorsTT>Anstatt die rohen Aktivitätsfarben zu verwenden, werden sie abgedunkelt, um nicht abzulenken</ShI.DarkerColorsTT>
 </LanguageData>

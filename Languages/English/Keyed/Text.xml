@@ -4,6 +4,8 @@
   <ShI.AlwaysShow>Always show all shift alerts</ShI.AlwaysShow>
   <ShI.NoPawnsOnShift>No pawns on shift</ShI.NoPawnsOnShift>
   <ShI.IncludePrisoners>Also count prisoners</ShI.IncludePrisoners>
+  <ShI.DarkerColors>Use darker colors</ShI.DarkerColors>
+  <ShI.DarkerColorsTT>Instead of using the raw activity colors, they will be darkened to not be distracting</ShI.DarkerColorsTT>
   <ShI.IncludePrisonersTT>Prisoners of the colony will be included in the shift info</ShI.IncludePrisonersTT>
   <ShI.IncludeSlaves>Also count slaves</ShI.IncludeSlaves>
   <ShI.IncludeSlavesTT>Slaves of the colony will be included in the shift info</ShI.IncludeSlavesTT>

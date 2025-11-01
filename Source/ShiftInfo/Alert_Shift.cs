@@ -58,7 +58,22 @@ public class Alert_Shift : Alert
         }
     }
 
-    protected override Color BGColor => currentShift.color;
+    protected override Color BGColor
+    {
+        get
+        {
+            if (!ShiftInfoMod.Instance.Settings.DarkerColors)
+            {
+                return currentShift.color;
+            }
+
+            // Fade the color to be darker by lerping toward black
+            var originalColor = currentShift.color;
+            var darker = Color.Lerp(originalColor, Color.black, 0.5f);
+            darker.a = originalColor.a; // preserve original alpha
+            return darker;
+        }
+    }
 
     public override TaggedString GetExplanation()
     {

@@ -1,5 +1,9 @@
 # Changelog for ShiftInfo
 
+1.6.2 - Added setting to darken the activity colors
+Used DeepL to update translations for ChineseSimplified, French, German
+
+
 1.6.1 - Fixed issue with prisoner-info
 
 

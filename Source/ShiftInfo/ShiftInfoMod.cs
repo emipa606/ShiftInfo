@@ -46,16 +46,16 @@ internal class ShiftInfoMod : Mod
     /// <param name="rect"></param>
     public override void DoSettingsWindowContents(Rect rect)
     {
-        var listing_Standard = new Listing_Standard();
-        listing_Standard.Begin(rect);
-        listing_Standard.Gap();
-        listing_Standard.CheckboxLabeled("ShI.AlwaysShow".Translate(), ref Settings.AlwaysShow,
+        var listingStandard = new Listing_Standard();
+        listingStandard.Begin(rect);
+        listingStandard.Gap();
+        listingStandard.CheckboxLabeled("ShI.AlwaysShow".Translate(), ref Settings.AlwaysShow,
             "ShI.AlwaysShowTT".Translate());
-        listing_Standard.CheckboxLabeled("ShI.IncludePrisoners".Translate(), ref Settings.IncludePrisoners,
+        listingStandard.CheckboxLabeled("ShI.IncludePrisoners".Translate(), ref Settings.IncludePrisoners,
             "ShI.IncludePrisonersTT".Translate());
         if (ModsConfig.RoyaltyActive)
         {
-            listing_Standard.CheckboxLabeled("ShI.IncludeSlaves".Translate(), ref Settings.IncludeSlaves,
+            listingStandard.CheckboxLabeled("ShI.IncludeSlaves".Translate(), ref Settings.IncludeSlaves,
                 "ShI.AIncludeSlavesTT".Translate());
         }
         else
@@ -63,14 +63,17 @@ internal class ShiftInfoMod : Mod
             Settings.IncludeSlaves = false;
         }
 
+        listingStandard.CheckboxLabeled("ShI.DarkerColors".Translate(), ref Settings.DarkerColors,
+            "ShI.DarkerColorsTT".Translate());
+
         if (currentVersion != null)
         {
-            listing_Standard.Gap();
+            listingStandard.Gap();
             GUI.contentColor = Color.gray;
-            listing_Standard.Label("ShI.ModVersion".Translate(currentVersion));
+            listingStandard.Label("ShI.ModVersion".Translate(currentVersion));
             GUI.contentColor = Color.white;
         }
 
-        listing_Standard.End();
+        listingStandard.End();
     }
 }

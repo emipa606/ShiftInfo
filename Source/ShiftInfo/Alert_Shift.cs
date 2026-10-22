@@ -10,7 +10,6 @@ namespace ShiftInfo;
 public class Alert_Shift : Alert
 {
     private readonly TimeAssignmentDef currentShift;
-    private readonly List<Pawn> pawnsOnShift = [];
     private int lastUpdatedTick = 50;
 
     public Alert_Shift()
@@ -28,10 +27,10 @@ public class Alert_Shift : Alert
             if (lastUpdatedTick < 50)
             {
                 lastUpdatedTick++;
-                return pawnsOnShift;
+                return field;
             }
 
-            pawnsOnShift.Clear();
+            field.Clear();
 
             Find.CurrentMap.mapPawns.FreeColonistsAndPrisonersSpawned.ForEach(pawn =>
             {
@@ -50,13 +49,13 @@ public class Alert_Shift : Alert
                     return;
                 }
 
-                pawnsOnShift.Add(pawn);
+                field.Add(pawn);
             });
 
             lastUpdatedTick = 0;
-            return pawnsOnShift;
+            return field;
         }
-    }
+    } = [];
 
     protected override Color BGColor
     {

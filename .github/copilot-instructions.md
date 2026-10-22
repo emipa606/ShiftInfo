@@ -1,51 +1,60 @@
-# Shift Info Mod - GitHub Copilot Instructions
-
-Welcome to the Shift Info mod development guide. Below is a comprehensive overview of the mod's purpose, key features, systems architecture, coding conventions, XML integration, and a primer on Harmony patching.
+# Copilot Instructions for Shift Info Mod Development
 
 ## Mod Overview and Purpose
+**Mod Name:** Shift Info  
+**Author:** Mlie  
+**PackageId:** Mlie.ShiftInfo  
 
-**Shift Info** is designed to enhance your RimWorld gameplay by providing real-time information on your pawns' current activities. Drawing inspiration from the scheduling systems in games like Prison Architect, this mod aims to help players better manage and coordinate large colonies by adding low-priority alerts for various time assignments, including custom ones introduced by other mods. Our goal is to address scheduling issues, especially as your colony grows.
+The "Shift Info" mod for RimWorld is designed to assist players in tracking what their pawns are doing at any given time in the game. Inspired by the mini-schedule display in Prison Architect, this mod provides a convenient way to monitor and troubleshoot scheduling issues that may arise as the number of pawns in your colony increases.
 
 ## Key Features and Systems
-
-- **Dynamic Alerts Module:** The mod creates low-priority alerts for each time assignment category. Alerts only show when there are pawns actively engaged unless configured otherwise in the mod settings.
-  
-- **Custom Time Assignments:** The system supports integration with time assignments added by other mods, ensuring flexibility and extended functionality.
-  
-- **Inclusion Options:** Users can configure the mod to include or exclude prisoners and slaves in shift tracking, offering tailored colony management.
+- **Time Assignment Alerts:** The mod introduces low-priority alerts for each possible time assignment type, including those added by other mods.
+- **Pawn Activity Display:** By default, the alerts only show if a pawn is actively engaged in the time assignment type, but this can be adjusted to always show.
+- **Customizable Options:** Players have the option to include prisoners and slaves in the shift information.
+- **Mod Configuration:** Various mod-options allow players to customize how information is displayed and what units are included.
 
 ## Coding Patterns and Conventions
-
-- **File Organization:** Code is organized by functionality and responsibility. For example, `Alert_Shift.cs` handles alert logic, while `ShiftInfoMod.cs` manages mod initialization.
-
-- **Class Access Modifiers:** Public classes like `Alert_Shift` are implemented for extensions and game integration. Internal classes like `ShiftInfoMod` and `ShiftInfoSettings` keep mod configurations encapsulated.
-
-- **Static Utility Classes:** We utilize static classes such as `ShiftInfo` and `AlertsReadout_CheckAddOrRemoveAlert` for universal methods and patches, minimizing unintended state changes and simplifying method access.
+- **C# Coding Conventions:** Follow standard C# conventions with clear naming for classes and methods, adhering to PascalCase for public members, and camelCase for private members.
+- **Separation of Concerns:** The mod's code is organized across multiple files, each responsible for a specific part of the functionality, such as settings, alert handling, and main mod operations.
+- **Minimal Use of XML:** This mod currently relies mainly on C# code with no XML definitions found in the project structure.
 
 ## XML Integration
-
-- **Data-Driven Design:** RimWorld's modding heavily relies on XML for defining game data. `Shift Info` integrates with XML to detect and categorize time assignments.
-  
-- **Localization:** Localizations can be stored in XML format to manage alert text for multiple languages, improving accessibility and usability for international players.
+- The mod does not utilize XML for its definitions, focusing instead on C# for dynamic functionality and settings management.
 
 ## Harmony Patching
-
-- **Purpose and Use:** Harmony Patching is employed to override or extend existing game methods without altering the original assembly. This ensures our mod runs alongside others seamlessly.
-
-- **Targeted Patches:** The mod includes patch classes such as `AlertsReadout_Constructor` to modify game behaviors specifically where necessary for new functionality without broader unintended effects.
+- The mod depends on **Harmony** for patching game methods to introduce new behaviors without altering original game code.
+- **Harmony Usage:** `AlertsReadout_CheckAddOrRemoveAlert.cs` includes a `Postfix` method to extend the behavior of RimWorld's alert system to incorporate its custom alerts.
 
 ## Suggestions for Copilot
-
-To maximize the use of GitHub Copilot for this project, consider the following prompts:
-
-1. **Alert Logic Enhancement:** Suggest and implement advanced alert filtering logic to enhance user customization.
+1. **Automate Recurrent Patterns:**
+   - Utilize Copilot to suggest enhancements for alert types by analyzing and automating similar patterns across different alert categories.
    
-2. **Custom Assignment Handling:** Generate examples of how to handle custom time assignments added by other mods.
+2. **Settings Management:**
+   - Leverage Copilot's suggestions to streamline `ShiftInfoSettings.cs` for more efficient handling of user options and data exposure.
+   
+3. **Enhanced Customization Options:**
+   - Implement additional user customization options with the help of Copilot, such as toggles or sliders in the settings UI.
 
-3. **Configurable Settings:** Provide boilerplate code for implementing and storing mod setting changes dynamically.
+4. **Documentation Enhancements:**
+   - Encourage Copilot to generate inline comments that explain complex code sections within methods like `GetExplanation` and `GetReport`.
 
-4. **Localization Expansion:** Generate template XML for localization that supports multiple languages for mod alerts.
+5. **Feature Expansion:**
+   - Get Copilot's assistance to brainstorm and code new features that align with the current system, such as extended time assignment types or conditional alert triggers.
 
-5. **Harmony Patching Examples:** Craft example patches for new alerts with `Harmony` that affect game methods related to time management.
+This structured guideline should assist you while using GitHub Copilot to enhance and maintain the Shift Info mod effectively.
 
-By adhering to these structures and suggestions, the Shift Info mod will be well-equipped to track and display pawn activities, thereby enhancing gameplay management and strategy.
+## Project Solution Guidelines
+- Relevant mod XML files are included as Solution Items under the solution folder named XML, these can be read and modified from within the solution.
+- Use these in-solution XML files as the primary files for reference and modification.
+- The `.github/copilot-instructions.md` file is included in the solution under the `.github` solution folder, so it should be read/modified from within the solution instead of using paths outside the solution. Update this file once only, as it and the parent-path solution reference point to the same file in this workspace.
+- When making functional changes in this mod, ensure the documented features stay in sync with implementation; use the in-solution `.github` copy as the primary file.
+- In the solution is also a project called Assembly-CSharp, containing a read-only version of the decompiled game source, for reference and debugging purposes.
+- For any new documentation, update this copilot-instructions.md file rather than creating separate documentation files.
+
+
+## Hard rules (must follow)
+- Do NOT run commands that modify the repo (no git commit, git apply, dotnet format) unless explicitly asked.
+- Prefer minimal reads: read only the smallest code region needed (around the suspicious lines).
+- When mentioning SonarQube issues, automatically use the SonarQube MCP service to fetch and address issues instead of making inferred fixes without querying SonarQube first.
+- When mentioning the rimworld log, automatically use the Rimworld MCP service to fetch the log.
+

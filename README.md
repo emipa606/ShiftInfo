@@ -1,6 +1,6 @@
 # [Shift Info](https://steamcommunity.com/sharedfiles/filedetails/?id=3322754255)
 
-![Image](https://i.postimg.cc/PJc4kLbg/Self-Info.png)
+![Image](https://img.litet.net/logos/Self-Info.png)
 
 Keep track of what your pawns are doing
 
@@ -11,13 +11,13 @@ There are also options to include prisoners and slaves in the shift info.
 I made this mod after years of playing Prison Architect where you have a mini-display of what activity is scheduled at the moment.
 Perhaps it can help to keep track of scheduling-issues when the amount of pawns in your colony grows.
 
-![Image](https://i.postimg.cc/nr5ktsY8/Self-Support-And-Donations.png)
+![Image](https://img.litet.net/logos/Self-SupportAndDonations.png)
 
 Since modding is just a hobby for me I expect no donations to keep modding. If you still want to show your support you can gift me anything from my [Wishlist](https://store.steampowered.com/wishlist/id/Mlie) or buy me a cup of tea.
 
-[![Image](https://i.postimg.cc/4yn5MvtR/Kofi-Small.png)](https://ko-fi.com/G2G55DDYD)
+[![Image](https://img.litet.net/logos/Kofi-Small.png)](https://ko-fi.com/G2G55DDYD)
 
-![Image](https://i.postimg.cc/cC6mj7Y4/Self-Reporting-Issues.png)
+![Image](https://img.litet.net/logos/Self-ReportingIssues.png)
 
 
 
@@ -31,4 +31,4 @@ Since modding is just a hobby for me I expect no donations to keep modding. If y
 
  
 
-[![Image](https://img.shields.io/github/v/release/emipa606/ShiftInfo?label=latest%20version&style=plastic&labelColor=0070cd&color=white)](https://steamcommunity.com/sharedfiles/filedetails/changelog/3322754255) | tags:  scheduling
+[![Image](https://img.shields.io/github/v/release/emipa606/ShiftInfo?label=latest%20version&style=plastic&labelColor=0070cd&color=white)](https://steamcommunity.com/sharedfiles/filedetails/changelog/3322754255) | 1.6, Mod, 1.5
